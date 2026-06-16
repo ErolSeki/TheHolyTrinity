@@ -1,0 +1,12 @@
+# robots.txt für The Holy Trinity Project
+# Schulprojekt - Modul 293 MP
+
+User-agent: *
+Allow: /
+
+# Ausschluss von Seiten ohne SEO-Relevanz
+Disallow: /impressum.html
+Disallow: /datenschutz.html
+
+# Sitemap-Verweis
+Sitemap: https://www.holy-trinity-project.ch/sitemap.xml

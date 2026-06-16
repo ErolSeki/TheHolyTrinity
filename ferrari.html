@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta-Tags: Beschreibung, Suchbegriffe und Autor für Suchmaschinen (SEO) -->
+  <meta name="description" content="Ferrari LaFerrari — Der erste Hybrid-Ferrari mit 963 PS aus V12 und E-Motor. Alle technischen Daten, Geschichte und Specs.">
+  <meta name="keywords" content="Ferrari LaFerrari, HY-KERS, V12 Hybrid, 963 PS, Hypercar">
+  <meta name="author" content="Erol Seki">
+  
+  <title>Ferrari LaFerrari — The Holy Trinity</title>
+  
+  <!-- Favicon: Kleines Icon, das im Browser-Tab und in Lesezeichen angezeigt wird -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Externes Stylesheet einbinden: Alle Styles sind in css/style.css ausgelagert -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       Sticky Navigation, die beim Scrollen immer oben bleibt.
+       Enthält: Logo (links), Hamburger-Button (Mobile rechts), Links (Desktop).
+       Das Mobile-Menü wird per JavaScript gesteuert (script.js, Funktion 1).
+       ============================================================ -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo">The <span>Holy</span> Trinity</a>
+    
+    <button class="nav-toggle" aria-label="Navigation öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ferrari.html" class="active">Ferrari</a></li>
+      <li><a href="mclaren.html">McLaren</a></li>
+      <li><a href="porsche.html">Porsche</a></li>
+      <li><a href="vergleich.html">Vergleich</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       GT7-HEADER: FERRARI LAFERRARI
+       Inspieriert vom Fahrzeug-Infobildschirm in Gran Turismo 7.
+       Enthält: Marken-Logo, Fahrzeugname, Baujahr und PP-Badge.
+       ============================================================ -->
+  <header class="gt-header">
+    <div class="gt-header-content">
+      <!-- Links: Marken-Logo + Fahrzeugname (Ferrari LaFerrari) -->
+      <div class="gt-brand-block">
+        <div class="gt-logo">
+          <img src="bilder/logos/ferrari-logo.png" alt="Ferrari Logo">
+        </div>
+        <div>
+          <div class="gt-brand-name ferrari">Ferrari</div>
+          <div class="gt-car-name">LaFerrari</div>
+          <div class="gt-car-year">2013 — 2016 · Italia · Hypercar</div>
+        </div>
+      </div>
+      
+      <!-- Rechts: Performance-Points-Badge (PP = GT7 Stärke-Einheit) -->
+      <div class="gt-pp-badge">
+        <div class="gt-pp-label">Performance Points</div>
+        <div class="gt-pp-value">920</div>
+        <div class="gt-pp-sub">PP — Class S</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SPECS-PANEL: TECHNISCHE DATEN
+       Zeigt animierte Leistungsbalken (links) und Schlüsselwerte (rechts).
+       Die Balken werden per JavaScript auf ihre Zielbreite animiert.
+       Datenquelle: Offizielle Herstellerangaben Ferrari.
+       ============================================================ -->
+  <section class="gt-specs-panel">
+    <!-- Linke Spalte: Animierte Performance-Balken (werden via JS animiert) -->
+    <div class="gt-stat-bars">
+      <div class="gt-panel-title">Performance</div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Leistung</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill ferrari" data-width="96"></div></div>
+        <div class="gt-stat-num">963 PS</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Drehmoment</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill ferrari" data-width="82"></div></div>
+        <div class="gt-stat-num">900 Nm</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Höchstgesch.</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill gold" data-width="88"></div></div>
+        <div class="gt-stat-num">352 km/h</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Beschleun.</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill gold" data-width="94"></div></div>
+        <div class="gt-stat-num">2.9 s</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Handling</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill silver" data-width="92"></div></div>
+        <div class="gt-stat-num">9.2 / 10</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Bremsweg</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill silver" data-width="85"></div></div>
+        <div class="gt-stat-num">28 m</div>
+      </div>
+    </div>
+    
+    <!-- Rechte Spalte: Wichtigste Technische Schlüsselwerte des Ferrari LaFerrari -->
+    <div class="gt-tech-specs">
+      <div class="gt-panel-title">Technische Daten</div>
+      
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Motor</span>
+        <span class="gt-tech-val">6.3L V12 + E-Motor</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Systemleistung</span>
+        <span class="gt-tech-val highlight">963 PS / 708 kW</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Antrieb</span>
+        <span class="gt-tech-val">Hinterrad (RWD)</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Getriebe</span>
+        <span class="gt-tech-val">7-Gang DCT</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Leergewicht</span>
+        <span class="gt-tech-val">1'255 kg</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">0 – 100 km/h</span>
+        <span class="gt-tech-val highlight">2.9 s</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Stückzahl</span>
+        <span class="gt-tech-val">499</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Neupreis</span>
+        <span class="gt-tech-val">1.4 Mio. €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTENT-GRID: 3 THEMEN MIT BILD
+       Drei Inhaltsbereiche mit Text links und Bild rechts.
+       Themen: Design, Motor/Antrieb, Aerodynamik/Cockpit.
+       Bilder: front.jpg, back.jpg, interior.jpg
+       ============================================================ -->
+  <section class="car-content">
+    <!-- Inhaltsblock 1: Design & Philosophie — Frontansicht-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Form Follows Emotion</h3>
+        <p>Der LaFerrari ist nicht einfach nur ein Auto — er ist ein Statement. Jede Linie, jede Kurve folgt der Ferrari-Philosophie: Form follows function, aber niemals ohne Emotion. Die aggressive Front mit den aerodynamischen Elementen erinnert an Ferraris Formel-1-Boliden, während die fliessenden Linien pure italienische Eleganz verkörpern.</p>
+        <p>Das Design stammt vom Centro Stile Ferrari unter der Leitung von Flavio Manzoni. Ziel war es, ein Auto zu schaffen, das sofort als Ferrari erkennbar ist, aber gleichzeitig neue Massstäbe setzt. Der LaFerrari verzichtet auf überflüssige Spielereien — jedes Element hat einen Zweck.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/ferrari-front.jpg" alt="Ferrari LaFerrari Frontansicht">
+      </div>
+    </div>
+    
+    <!-- Inhaltsblock 2: Motor & Antrieb (V12 + E-Motor, 963 PS) — Heckansicht-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Das Herz eines Rennwagens</h3>
+        <p>Unter der Haube arbeitet ein 6,3-Liter-V12-Saugmotor, der alleine schon 800 PS leistet. Dazu kommt ein Elektromotor mit 163 PS — zusammen ergibt das eine Systemleistung von 963 PS. Das HY-KERS-System (Hybrid Kinetic Energy Recovery System) wurde direkt aus der Formel 1 übernommen und für die Strasse adaptiert.</p>
+        <p>Anders als bei klassischen Hybriden kann der LaFerrari nicht rein elektrisch fahren. Der E-Motor dient ausschliesslich dazu, den Verbrenner zu unterstützen — für maximale Performance. Die Energie wird beim Bremsen zurückgewonnen und in einer Lithium-Ionen-Batterie gespeichert. Das System entscheidet intelligent, wann der Elektromotor zugeschaltet wird — der Fahrer muss sich um nichts kümmern.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/ferrari-back.jpg" alt="Ferrari LaFerrari Heckansicht">
+      </div>
+    </div>
+    
+    <!-- Inhaltsblock 3: Aerodynamik & Cockpit — Innenraum-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Aerodynamik & Fahrgefühl</h3>
+        <p>Der LaFerrari nutzt aktive Aerodynamik: Klappen und Diffusoren passen sich automatisch an Geschwindigkeit und Fahrsituation an. Der Unterboden erzeugt massiven Abtrieb, ohne einen riesigen Heckflügel zu benötigen — typisch Ferrari, bei dem Ästhetik und Funktion im Einklang stehen müssen.</p>
+        <p>Im Cockpit sitzt der Fahrer tief und zentriert — wie in einem Formel-1-Auto. Alle Bedienelemente sind auf das Lenkrad ausgelagert, der Blick geht durch das kleine, flache Lenkrad direkt auf die Instrumententafel. Ferrari nennt es «Maximum Integration» — der Fahrer wird eins mit der Maschine. Kein Komfort-Schnickschnack, nur das Wesentliche: Gas, Bremse, Lenkung.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/ferrari-interior.jpg" alt="Ferrari LaFerrari Interieur">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOUND-PLAYER (Interaktives Element)
+       Spielt den originalen Motorsound des Ferrari ab.
+       Audio-Datei: audios/ferrari-sound.mp3
+       Play/Pause wird per JavaScript (script.js, Funktion 3) gesteuert.
+       Der Visualizer animiert sich während der Wiedergabe.
+       ============================================================ -->
+  <section class="sound-section">
+    <div class="sound-info">
+      <div class="sound-eyebrow">Interaktives Element</div>
+      <h3 class="sound-title">Der V12-Sound</h3>
+      <p class="sound-desc">Erlebe den unverwechselbaren Klang des 6,3-Liter-V12 — ein Motorsound, der durch Mark und Bein geht.</p>
+    </div>
+    
+    <!-- Visualizer -->
+    <div class="sound-visualizer">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <!-- Play-Button -->
+    <button class="sound-btn">
+      <span class="sound-btn-icon">▶</span> Motorsound abspielen
+    </button>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Seitenabschluss mit Copyright und Links zu Impressum/Datenschutz.
+       ============================================================ -->
+  <footer class="main-footer">
+    <span>&copy; 2026 The Holy Trinity</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript am Ende des Body einbinden: Sorgt dafür, dass das HTML
+       zuerst geladen wird, bevor das Skript ausgeführt wird (bessere Performance) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

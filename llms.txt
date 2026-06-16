@@ -1,0 +1,27 @@
+# The Holy Trinity
+
+> Vergleich der drei legendären Hybrid-Hypercars: Ferrari LaFerrari, McLaren P1
+> und Porsche 918 Spyder. Schulprojekt im Rahmen von Modul 293 MP.
+> Erstellt von Erol Seki, Bénédict-Schule Luzern.
+
+<!-- Hinweis: Die Pfade basieren auf http://localhost:5500/ — dem Standard-Port
+     des VS Code Live Server. Bei echter Veröffentlichung durch echte Domain ersetzen. -->
+
+## Hauptseiten
+
+- [Home](/index.html): Startseite mit Einführung und Rivalitäts-Geschichte der Holy Trinity
+- [Ferrari LaFerrari](/ferrari.html): Technische Daten, Performance-Werte und Hintergründe zum LaFerrari
+- [McLaren P1](/mclaren.html): Technische Daten, Performance-Werte und Hintergründe zum McLaren P1
+- [Porsche 918 Spyder](/porsche.html): Technische Daten, Performance-Werte und Hintergründe zum 918 Spyder
+- [Vergleich](/vergleich.html): Direkte Gegenüberstellung aller drei Fahrzeuge in 17 Kategorien
+- [Kontakt](/kontakt.html): Kontaktformular mit JavaScript-Validierung
+
+## Rechtliches
+
+- [Impressum](/impressum.html): Angaben zum Betreiber dieser Website
+- [Datenschutz](/datenschutz.html): Datenschutzerklärung gemäss DSGVO
+
+## Technische Dateien
+
+- [Sitemap](/sitemap.xml): Vollständige Seitenübersicht für Suchmaschinen
+- [Robots](/robots.txt): Crawling-Anweisungen für Suchmaschinen und AI-Bots

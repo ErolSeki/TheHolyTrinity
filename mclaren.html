@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta-Tags: Beschreibung, Suchbegriffe und Autor für Suchmaschinen (SEO) -->
+  <meta name="description" content="McLaren P1 — Formel-1-Technologie für die Strasse. 916 PS aus Twin-Turbo-V8 und E-Motor. Der ultimative Track-Weapon-Hypercar.">
+  <meta name="keywords" content="McLaren P1, Twin-Turbo V8, Hybrid, 916 PS, Track Weapon, Formel 1">
+  <meta name="author" content="Erol Seki">
+  
+  <title>McLaren P1 — The Holy Trinity</title>
+  
+  <!-- Favicon: Kleines Icon, das im Browser-Tab und in Lesezeichen angezeigt wird -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Externes Stylesheet einbinden: Alle Styles sind in css/style.css ausgelagert -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       Sticky Navigation, die beim Scrollen immer oben bleibt.
+       Enthält: Logo (links), Hamburger-Button (Mobile rechts), Links (Desktop).
+       Das Mobile-Menü wird per JavaScript gesteuert (script.js, Funktion 1).
+       ============================================================ -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo">The <span>Holy</span> Trinity</a>
+    
+    <button class="nav-toggle" aria-label="Navigation öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ferrari.html">Ferrari</a></li>
+      <li><a href="mclaren.html" class="active">McLaren</a></li>
+      <li><a href="porsche.html">Porsche</a></li>
+      <li><a href="vergleich.html">Vergleich</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       GT7-HEADER
+       ============================================================ -->
+  <header class="gt-header">
+    <div class="gt-header-content">
+      <!-- Links: Marken-Logo + Fahrzeugname (McLaren P1) -->
+      <div class="gt-brand-block">
+        <div class="gt-logo">
+          <img src="bilder/logos/mclaren-logo.png" alt="McLaren Logo">
+        </div>
+        <div>
+          <div class="gt-brand-name mclaren">McLaren</div>
+          <div class="gt-car-name">P1</div>
+          <div class="gt-car-year">2013 — 2015 · UK · Track Weapon</div>
+        </div>
+      </div>
+      
+      <!-- Rechts: Performance-Points-Badge (PP = GT7 Stärke-Einheit) -->
+      <div class="gt-pp-badge">
+        <div class="gt-pp-label">Performance Points</div>
+        <div class="gt-pp-value">905</div>
+        <div class="gt-pp-sub">PP — Class S</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SPECS-PANEL: TECHNISCHE DATEN
+       Zeigt animierte Leistungsbalken (links) und Schlüsselwerte (rechts).
+       Die Balken werden per JavaScript auf ihre Zielbreite animiert.
+       Datenquelle: Offizielle Herstellerangaben McLaren.
+       ============================================================ -->
+  <section class="gt-specs-panel">
+    <!-- Linke Spalte: Animierte Performance-Balken (werden via JS animiert) -->
+    <div class="gt-stat-bars">
+      <div class="gt-panel-title">Performance</div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Leistung</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill mclaren" data-width="92"></div></div>
+        <div class="gt-stat-num">916 PS</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Drehmoment</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill mclaren" data-width="90"></div></div>
+        <div class="gt-stat-num">978 Nm</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Höchstgesch.</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill gold" data-width="87"></div></div>
+        <div class="gt-stat-num">350 km/h</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Beschleun.</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill gold" data-width="95"></div></div>
+        <div class="gt-stat-num">2.8 s</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Handling</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill silver" data-width="96"></div></div>
+        <div class="gt-stat-num">9.6 / 10</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Bremsweg</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill silver" data-width="90"></div></div>
+        <div class="gt-stat-num">30 m</div>
+      </div>
+    </div>
+    
+    <!-- Rechte Spalte: Wichtigste Technische Schlüsselwerte des McLaren P1 -->
+    <div class="gt-tech-specs">
+      <div class="gt-panel-title">Technische Daten</div>
+      
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Motor</span>
+        <span class="gt-tech-val">3.8L V8 Twin-Turbo + E-Motor</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Systemleistung</span>
+        <span class="gt-tech-val highlight">916 PS / 674 kW</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Antrieb</span>
+        <span class="gt-tech-val">Hinterrad (RWD)</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Getriebe</span>
+        <span class="gt-tech-val">7-Gang DCT</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Leergewicht</span>
+        <span class="gt-tech-val">1'395 kg</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">0 – 100 km/h</span>
+        <span class="gt-tech-val highlight">2.8 s</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Stückzahl</span>
+        <span class="gt-tech-val">375</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Neupreis</span>
+        <span class="gt-tech-val">1.15 Mio. €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTENT GRID
+       ============================================================ -->
+  <section class="car-content">
+    <!-- Inhaltsblock 1: Design & Philosophie — Frontansicht-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Die Antwort auf den F1</h3>
+        <p>Der P1 ist nicht einfach nur der Nachfolger des legendären McLaren F1 — er ist eine kompromisslose Neuinterpretation dessen, was ein Ultimate Hypercar sein kann. Das Design folgt der Philosophie «Everything for a Reason»: Kein Element ist Dekoration, alles dient der Performance.</p>
+        <p>Die Front ist aggressiv und funktional: Die breiten Lufteinlässe kühlen Motor und Bremsen, während die Scheinwerfer minimalistisch in die Karosserie integriert sind. Der P1 wirkt wie ein LMP1-Rennwagen für die Strasse — und genau das war auch McLarens Ziel. Frank Stephenson, der Designer, nannte es «shrink-wrapped» — die Karosserie liegt wie eine zweite Haut über dem Chassis.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/mclaren-front.jpg" alt="McLaren P1 Frontansicht">
+      </div>
+    </div>
+    
+    <!-- Inhaltsblock 2: Motor & Antrieb (V8 Twin-Turbo + E-Motor, 916 PS) — Heckansicht-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Twin-Turbo-Gewalt trifft E-Power</h3>
+        <p>Der P1 setzt auf einen 3,8-Liter-V8-Biturbo-Motor, der aus McLarens Formel-1-Erfahrung stammt. Alleine leistet er 737 PS — dazu kommt ein 179 PS starker Elektromotor, der direkt in die Kurbelwelle integriert ist. Das Ergebnis: 916 PS Systemleistung und ein brutales Drehmoment von 978 Nm.</p>
+        <p>Anders als Ferrari und Porsche kann der P1 bis zu 10 Kilometer rein elektrisch fahren — allerdings im «E-Mode», der eher für leises Cruisen gedacht ist. Im «Race Mode» wird der Elektromotor zu einem Boost-Monster: Sofortiges Drehmoment ohne Turbo-Lag, perfekte Traktion beim Ausgang aus Kurven. McLaren nennt es «Instant Power Assist System» (IPAS).</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/mclaren-back.jpg" alt="McLaren P1 Heckansicht">
+      </div>
+    </div>
+    
+    <!-- Inhaltsblock 3: Aerodynamik & Cockpit — Innenraum-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Aktive Aerodynamik & Race-Cockpit</h3>
+        <p>Das Herzstück der Aerodynamik ist der aktive Heckflügel: Im «Race Mode» stellt er sich auf maximalen Anstellwinkel und erzeugt bis zu 600 kg Abtrieb. Beim Bremsen klappt er zusätzlich hoch und wirkt wie eine Luftbremse — das Konzept «DRS» (Drag Reduction System) aus der Formel 1, umgekehrt angewendet.</p>
+        <p>Im Cockpit herrscht Rennstrecken-Atmosphäre: Leichte Carbon-Schalensitze, minimalistisches Armaturenbrett, alles auf das Wesentliche reduziert. Das Lenkrad ist flach unten abgeschnitten — wie im F1. McLaren verzichtete bewusst auf unnötigen Luxus: keine Klimaanlage (optional), kein Sound-System (optional), keine weichen Polster. Nur eines zählt: die Rundenzeit.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/mclaren-interior.jpg" alt="McLaren P1 Interieur">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOUND-PLAYER
+       ============================================================ -->
+  <section class="sound-section">
+    <div class="sound-info">
+      <div class="sound-eyebrow">Interaktives Element</div>
+      <h3 class="sound-title">Der Twin-Turbo-V8-Sound</h3>
+      <p class="sound-desc">Hör den charakteristischen Sound des aufgeladenen V8 — ein aggressives, scharfes Heulen bei hohen Drehzahlen.</p>
+    </div>
+    
+    <!-- Visualizer -->
+    <div class="sound-visualizer">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <!-- Play-Button -->
+    <button class="sound-btn">
+      <span class="sound-btn-icon">▶</span> Motorsound abspielen
+    </button>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Seitenabschluss mit Copyright und Links zu Impressum/Datenschutz.
+       ============================================================ -->
+  <footer class="main-footer">
+    <span>&copy; 2026 The Holy Trinity</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript am Ende des Body einbinden: Sorgt dafür, dass das HTML
+       zuerst geladen wird, bevor das Skript ausgeführt wird (bessere Performance) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

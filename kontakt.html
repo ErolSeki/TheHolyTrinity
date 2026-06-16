@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta-Tags: Beschreibung, Suchbegriffe und Autor für Suchmaschinen (SEO) -->
+  <meta name="description" content="Kontaktiere The Holy Trinity — Feedback, Fragen oder Anmerkungen zu Ferrari LaFerrari, McLaren P1 und Porsche 918 Spyder.">
+  <meta name="keywords" content="Kontakt, Feedback, Hypercar, Holy Trinity">
+  <meta name="author" content="Erol Seki">
+  
+  <title>Kontakt — The Holy Trinity</title>
+  
+  <!-- Favicon: Kleines Icon, das im Browser-Tab und in Lesezeichen angezeigt wird -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Externes Stylesheet einbinden: Alle Styles sind in css/style.css ausgelagert -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       Sticky Navigation, die beim Scrollen immer oben bleibt.
+       Enthält: Logo (links), Hamburger-Button (Mobile rechts), Links (Desktop).
+       Das Mobile-Menü wird per JavaScript gesteuert (script.js, Funktion 1).
+       ============================================================ -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo">The <span>Holy</span> Trinity</a>
+    
+    <button class="nav-toggle" aria-label="Navigation öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ferrari.html">Ferrari</a></li>
+      <li><a href="mclaren.html">McLaren</a></li>
+      <li><a href="porsche.html">Porsche</a></li>
+      <li><a href="vergleich.html">Vergleich</a></li>
+      <li><a href="kontakt.html" class="active">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HEADER
+       ============================================================ -->
+  <header class="page-header">
+    <div class="page-eyebrow">Kontakt</div>
+    <h1>Schreib uns</h1>
+  </header>
+
+  <!-- ============================================================
+       KONTAKT-FORMULAR
+       ============================================================ -->
+  <section class="kontakt-section">
+    <!-- Linke Spalte: Kontakt-Informationstext und Einleitung -->
+    <div class="kontakt-info">
+      <div class="section-eyebrow">Kontakt</div>
+      <h2>Hast du eine Frage oder Anmerkung?</h2>
+      <p>Schreib uns gerne — wir freuen uns über Feedback, Korrekturen oder einfach eine Nachricht von einem anderen Hypercar-Fan. Alle Felder mit <span style="color: var(--gold);">*</span> sind Pflichtfelder.</p>
+    </div>
+    
+    <!-- Rechte Spalte: Kontaktformular mit JavaScript-Validierung -->
+    <!-- ============================================================
+         ONLEX FORMMAILER
+         Sendet die Formulardaten an den Onlex-Dienst.
+         Onlex leitet die Daten als E-Mail an den hinterlegten
+         Empfänger weiter (Benutzerkonto: Revandor).
+         ============================================================ -->
+    <form id="contact-form"
+          action="https://www.onlex.de/_formmailer.php?username=Revandor"
+          method="POST"
+          enctype="application/x-www-form-urlencoded"
+          accept-charset="UTF-8"
+          novalidate>
+      
+      <!-- Onlex: Formular-Name (erscheint als Betreff in der E-Mail) -->
+      <input type="hidden" name="Formular" value="Kontakt — The Holy Trinity">
+      <!-- Vorname + Nachname: Zweispaltiges Eingabefeld nebeneinander -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstname">Vorname <span class="req">*</span></label>
+          <input type="text" id="firstname" name="Vorname" class="form-control" required>
+          <span class="error-msg">Bitte gib deinen Vornamen ein.</span>
+        </div>
+        <div class="form-group">
+          <label for="lastname">Nachname <span class="req">*</span></label>
+          <input type="text" id="lastname" name="Nachname" class="form-control" required>
+          <span class="error-msg">Bitte gib deinen Nachnamen ein.</span>
+        </div>
+      </div>
+      
+      <!-- E-Mail: Wird per Regex geprüft (muss @ und . enthalten) -->
+      <div class="form-group">
+        <label for="email">E-Mail-Adresse <span class="req">*</span></label>
+        <input type="email" id="email" name="E-Mail" class="form-control" required>
+        <span class="error-msg">Bitte gib eine gültige E-Mail-Adresse ein.</span>
+      </div>
+      
+      <!-- Lieblingsauto: Dropdown-Auswahl der drei Fahrzeuge -->
+      <div class="form-group">
+        <label for="car">Dein Lieblingsauto <span class="req">*</span></label>
+        <select id="car" name="Lieblingsauto" class="form-control" required>
+          <option value="">— Bitte wählen —</option>
+          <option value="ferrari">Ferrari LaFerrari</option>
+          <option value="mclaren">McLaren P1</option>
+          <option value="porsche">Porsche 918 Spyder</option>
+          <option value="alle">Alle drei sind genial!</option>
+        </select>
+        <span class="error-msg">Bitte wähle ein Auto aus.</span>
+      </div>
+      
+      <!-- Nachricht: Mehrzeiliges Textfeld (textarea, 5 Zeilen) -->
+      <div class="form-group">
+        <label for="message">Deine Nachricht <span class="req">*</span></label>
+        <textarea id="message" name="Nachricht" class="form-control" rows="5" required></textarea>
+        <span class="error-msg">Bitte schreib uns eine Nachricht.</span>
+      </div>
+      
+      <!-- Datenschutz-Checkbox: Muss angekreuzt sein (Pflichtfeld) -->
+      <div class="form-group">
+        <div class="checkbox-group">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">
+            Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und akzeptiere diese. <span class="req">*</span>
+          </label>
+        </div>
+        <span class="error-msg">Bitte akzeptiere die Datenschutzerklärung.</span>
+      </div>
+      
+      <!-- Submit-Button: Löst JavaScript-Validierung aus, dann Onlex-Versand -->
+      <button type="submit" class="btn-submit">Nachricht absenden</button>
+      
+      <!-- Erfolgsmeldung: Wird nach erfolgreichem Absenden eingeblendet -->
+      <div id="success-msg" class="success-msg">
+        ✓ Vielen Dank! Deine Nachricht wurde erfolgreich versendet.
+      </div>
+    </form>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Seitenabschluss mit Copyright und Links zu Impressum/Datenschutz.
+       ============================================================ -->
+  <footer class="main-footer">
+    <span>&copy; 2026 The Holy Trinity</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript am Ende des Body einbinden: Sorgt dafür, dass das HTML
+       zuerst geladen wird, bevor das Skript ausgeführt wird (bessere Performance) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

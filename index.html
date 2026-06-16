@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta-Tags: Beschreibung, Suchbegriffe und Autor für Suchmaschinen (SEO) -->
+  <meta name="description" content="Die Holy Trinity: Ferrari LaFerrari, McLaren P1 und Porsche 918 Spyder — drei legendäre Hybrid-Hypercars im Vergleich.">
+  <meta name="keywords" content="Ferrari LaFerrari, McLaren P1, Porsche 918 Spyder, Holy Trinity, Hypercar, Hybrid, Vergleich">
+  <meta name="author" content="Erol Seki">
+  
+  <!-- Open Graph Meta-Tags: Steuern die Vorschau beim Teilen in sozialen Netzwerken -->
+  <meta property="og:title" content="The Holy Trinity — Die drei legendären Hybrid-Hypercars">
+  <meta property="og:description" content="Ferrari LaFerrari, McLaren P1 und Porsche 918 Spyder im Detail-Vergleich">
+  <meta property="og:type" content="website">
+  
+  <title>The Holy Trinity — Ferrari, McLaren, Porsche</title>
+  
+  <!-- Favicon: Kleines Icon, das im Browser-Tab und in Lesezeichen angezeigt wird -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Externes Stylesheet einbinden: Alle Styles sind in css/style.css ausgelagert -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo">The <span>Holy</span> Trinity</a>
+    
+    <!-- Hamburger-Button: Nur auf Mobile sichtbar, öffnet/schliesst das Menü per JS -->
+    <button class="nav-toggle" aria-label="Navigation öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <!-- Navigation-Links: Auf Desktop als horizontale Liste, auf Mobile eingeklappt -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ferrari.html">Ferrari</a></li>
+      <li><a href="mclaren.html">McLaren</a></li>
+      <li><a href="porsche.html">Porsche</a></li>
+      <li><a href="vergleich.html">Vergleich</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       HERO-BEREICH (Startseite oben)
+       Grosser Eingangsbereich mit Gruppenfoto aller drei Fahrzeuge.
+       Enthält: Eyebrow-Text, Haupttitel, Untertitel und Gruppenbild.
+       Der Ghost-Text "TRINITY" im Hintergrund läuft über CSS ::before.
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-eyebrow">The Ultimate Hybrid Hypercars · 2013–2015</div>
+    <h1>The Holy<br><em>Trinity</em></h1>
+    <p class="hero-sub">Drei Hersteller. Drei Philosophien. Eine einzige Frage: Wer baut das ultimative Hypercar?</p>
+    <img src="bilder/autos/holy-trinity.jpg" alt="Ferrari LaFerrari, McLaren P1 und Porsche 918 Spyder auf der Rennstrecke" class="hero-img">
+  </section>
+
+  <!-- ============================================================
+       AUTO-NAVIGATION (3 Kacheln)
+       Drei klickbare Kacheln für die drei Fahrzeuge.
+       Jede Kachel zeigt: Logo, Marke, Modellname und Pfeil-Icon.
+       Farblich codiert: Ferrari Rot, McLaren Orange, Porsche Silber.
+       ============================================================ -->
+  <nav class="car-nav">
+    <!-- Ferrari-Kachel: Führt zu ferrari.html (LaFerrari Detail-Seite) -->
+    <a href="ferrari.html" class="car-nav-item ferrari">
+      <div class="car-nav-left">
+        <div class="car-nav-logo">
+          <img src="bilder/logos/ferrari-logo.png" alt="Ferrari Logo">
+        </div>
+        <div>
+          <div class="car-nav-brand">Ferrari</div>
+          <div class="car-nav-name">LaFerrari</div>
+        </div>
+      </div>
+      <div class="car-nav-arrow">→</div>
+    </a>
+    
+    <!-- McLaren-Kachel: Führt zu mclaren.html (P1 Detail-Seite) -->
+    <a href="mclaren.html" class="car-nav-item mclaren">
+      <div class="car-nav-left">
+        <div class="car-nav-logo">
+          <img src="bilder/logos/mclaren-logo.png" alt="McLaren Logo">
+        </div>
+        <div>
+          <div class="car-nav-brand">McLaren</div>
+          <div class="car-nav-name">P1</div>
+        </div>
+      </div>
+      <div class="car-nav-arrow">→</div>
+    </a>
+    
+    <!-- Porsche-Kachel: Führt zu porsche.html (918 Spyder Detail-Seite) -->
+    <a href="porsche.html" class="car-nav-item porsche">
+      <div class="car-nav-left">
+        <div class="car-nav-logo">
+          <img src="bilder/logos/porsche-logo.png" alt="Porsche Logo">
+        </div>
+        <div>
+          <div class="car-nav-brand">Porsche</div>
+          <div class="car-nav-name">918 Spyder</div>
+        </div>
+      </div>
+      <div class="car-nav-arrow">→</div>
+    </a>
+  </nav>
+
+  <!-- ============================================================
+       STORY-BEREICH: DIE GESCHICHTE DER RIVALITÄT
+       Erzählt die Entstehungsgeschichte der Holy Trinity.
+       Enthält: 3 Kapitel-Karten, Haupttext (links) und Timeline (rechts).
+       Zweispaltiges Layout: Text links, chronologische Timeline rechts.
+       ============================================================ -->
+  <section class="story-section">
+    <div class="story-eyebrow">Die Geschichte</div>
+    <h2 class="story-title">Eine Rivalität, die<br>die Automobilwelt <em>veränderte</em></h2>
+    
+    <!-- Drei Kapitel-Karten: Je eine für Ferrari, McLaren und Porsche.
+         Jede Karte hat eine römische Zahl, Titel und Kurztext. -->
+    <div class="story-chapters">
+      <!-- Kapitel I: Ferrari — Wer den ersten Masstab gesetzt hat -->
+      <article class="story-chapter">
+        <div class="chapter-num ferrari-num">I</div>
+        <h3 class="chapter-title">Ferrari — Der Benchmark</h3>
+        <p class="chapter-text">Ferrari setzte mit dem LaFerrari den ersten Masstab. Als einziger Hersteller mit einem V12-Hybrid wollte Maranello beweisen, dass Emotion und Technologie kein Widerspruch sind.</p>
+      </article>
+      
+      <!-- Kapitel II: McLaren — Die Herausforderung aus Woking (UK) -->
+      <article class="story-chapter">
+        <div class="chapter-num mclaren-num">II</div>
+        <h3 class="chapter-title">McLaren — Die Herausforderung</h3>
+        <p class="chapter-text">McLaren kam mit der Erfahrung aus der Formel 1 und dem P1 — einem Auto, das nicht nur schnell, sondern auch auf der Rennstrecke zuhause sein sollte. Die Antwort auf Ferrari.</p>
+      </article>
+      
+      <!-- Kapitel III: Porsche — Die überraschende Antwort aus Stuttgart -->
+      <article class="story-chapter">
+        <div class="chapter-num porsche-num">III</div>
+        <h3 class="chapter-title">Porsche — Die Überraschung</h3>
+        <p class="chapter-text">Porsche überraschte alle: Der 918 Spyder war das effizienteste und in vielen Tests schnellste Auto der drei — und dabei noch das günstigste. Ein Statement aus Stuttgart.</p>
+      </article>
+    </div>
+    
+    <!-- Zweispalten-Layout: Linker Fliesstext + rechte Zeitleiste -->
+    <div class="story-main">
+      <!-- Linke Spalte: Ausführlicher Begleittext zur Entstehungsgeschichte -->
+      <div class="story-text">
+        <h3>Wie alles begann — <em>die Ära der Hybrid-Hypercars</em></h3>
+        <p>Um 2010 wurde klar, dass die nächste Generation von Hypercars elektrische Unterstützung brauchen würde — nicht aus Umweltgründen, sondern weil reine Verbrennungsmotoren an ihre physikalischen Grenzen stiessen. Die Kombination aus Verbrenner und E-Motor versprach nicht nur mehr Leistung, sondern auch bessere Traktion und Effizienz.</p>
+        <p>Ferrari, McLaren und Porsche begannen fast zeitgleich, an ihren jeweiligen Flaggschiffen zu arbeiten. Keiner wusste genau vom anderen — und doch entstand eine der grössten Rivalitäten der Automobilgeschichte. Jeder Hersteller verfolgte eine eigene Philosophie: Ferrari setzte auf rohe Emotion mit einem V12, McLaren auf Rennstrecken-DNA aus der Formel 1, und Porsche auf deutsche Ingenieurskunst mit Alltagstauglichkeit.</p>
+        <p>Als alle drei Autos fast zur gleichen Zeit vorgestellt wurden, war die Fachwelt verblüfft: Drei völlig unterschiedliche Ansätze, drei verschiedene Philosophien — und alle drei brillant. Die Medien tauften sie schnell «The Holy Trinity» — die heilige Dreifaltigkeit der Hypercars.</p>
+      </div>
+      
+      <!-- Rechte Spalte: Chronologische Timeline von 2010 bis 2013 -->
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2010</div>
+          <div class="timeline-text"><strong>Porsche</strong> zeigt auf der Genfer Motorshow die Studie 918 Spyder — ein Hybrid-Supersportwagen mit Plug-in-Technologie.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2011</div>
+          <div class="timeline-text"><strong>McLaren</strong> kündigt den P1 als Nachfolger des legendären F1 an. Das Ziel: das schnellste Auto auf der Rennstrecke zu sein.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2013</div>
+          <div class="timeline-text"><strong>Ferrari</strong> präsentiert den LaFerrari auf dem Genfer Salon — der erste Ferrari-Hybrid überhaupt und das stärkste Serienfahrzeug der Marke.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2013</div>
+          <div class="timeline-text">Alle drei Autos erscheinen fast gleichzeitig. Die Welt nennt sie die <strong>Holy Trinity</strong> — drei Legenden einer Ära.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2013</div>
+          <div class="timeline-text"><strong>McLaren P1</strong> stellt einen neuen Produktionswagen-Rekord auf der Nürburgring-Nordschleife auf: 6:47 min.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2013</div>
+          <div class="timeline-text"><strong>Porsche 918</strong> unterbietet diesen Rekord mit 6:57 min und beweist, dass Allradantrieb und Effizienz auch auf der Nordschleife siegen können.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Seitenabschluss mit Copyright und Links zu Impressum/Datenschutz.
+       ============================================================ -->
+  <footer class="main-footer">
+    <span>&copy; 2026 The Holy Trinity</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript am Ende des Body einbinden: Sorgt dafür, dass das HTML
+       zuerst geladen wird, bevor das Skript ausgeführt wird (bessere Performance) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

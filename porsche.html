@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta-Tags: Beschreibung, Suchbegriffe und Autor für Suchmaschinen (SEO) -->
+  <meta name="description" content="Porsche 918 Spyder — Effizienz trifft Performance. 887 PS aus V8 und zwei E-Motoren. Der schnellste der Holy Trinity auf der Nordschleife.">
+  <meta name="keywords" content="Porsche 918 Spyder, V8 Hybrid, 887 PS, Nordschleife, Plug-in-Hybrid, Allrad">
+  <meta name="author" content="Erol Seki">
+  
+  <title>Porsche 918 Spyder — The Holy Trinity</title>
+  
+  <!-- Favicon: Kleines Icon, das im Browser-Tab und in Lesezeichen angezeigt wird -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Externes Stylesheet einbinden: Alle Styles sind in css/style.css ausgelagert -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       Sticky Navigation, die beim Scrollen immer oben bleibt.
+       Enthält: Logo (links), Hamburger-Button (Mobile rechts), Links (Desktop).
+       Das Mobile-Menü wird per JavaScript gesteuert (script.js, Funktion 1).
+       ============================================================ -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo">The <span>Holy</span> Trinity</a>
+    
+    <button class="nav-toggle" aria-label="Navigation öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ferrari.html">Ferrari</a></li>
+      <li><a href="mclaren.html">McLaren</a></li>
+      <li><a href="porsche.html" class="active">Porsche</a></li>
+      <li><a href="vergleich.html">Vergleich</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       GT7-HEADER
+       ============================================================ -->
+  <header class="gt-header">
+    <div class="gt-header-content">
+      <!-- Links: Marken-Logo + Fahrzeugname (Porsche 918 Spyder) -->
+      <div class="gt-brand-block">
+        <div class="gt-logo">
+          <img src="bilder/logos/porsche-logo.png" alt="Porsche Logo">
+        </div>
+        <div>
+          <div class="gt-brand-name porsche">Porsche</div>
+          <div class="gt-car-name">918 Spyder</div>
+          <div class="gt-car-year">2013 — 2015 · Deutschland · Allrad</div>
+        </div>
+      </div>
+      
+      <!-- Rechts: Performance-Points-Badge (PP = GT7 Stärke-Einheit) -->
+      <div class="gt-pp-badge">
+        <div class="gt-pp-label">Performance Points</div>
+        <div class="gt-pp-value">895</div>
+        <div class="gt-pp-sub">PP — Class S</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SPECS-PANEL: TECHNISCHE DATEN
+       Zeigt animierte Leistungsbalken (links) und Schlüsselwerte (rechts).
+       Die Balken werden per JavaScript auf ihre Zielbreite animiert.
+       Datenquelle: Offizielle Herstellerangaben Porsche.
+       ============================================================ -->
+  <section class="gt-specs-panel">
+    <!-- Linke Spalte: Animierte Performance-Balken (werden via JS animiert) -->
+    <div class="gt-stat-bars">
+      <div class="gt-panel-title">Performance</div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Leistung</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill porsche" data-width="88"></div></div>
+        <div class="gt-stat-num">887 PS</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Drehmoment</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill porsche" data-width="85"></div></div>
+        <div class="gt-stat-num">1'280 Nm</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Höchstgesch.</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill gold" data-width="85"></div></div>
+        <div class="gt-stat-num">345 km/h</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Beschleun.</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill gold" data-width="98"></div></div>
+        <div class="gt-stat-num">2.6 s</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Handling</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill silver" data-width="94"></div></div>
+        <div class="gt-stat-num">9.4 / 10</div>
+      </div>
+      
+      <div class="gt-stat-row">
+        <div class="gt-stat-label">Bremsweg</div>
+        <div class="gt-bar-track"><div class="gt-bar-fill silver" data-width="88"></div></div>
+        <div class="gt-stat-num">29 m</div>
+      </div>
+    </div>
+    
+    <!-- Rechte Spalte: Wichtigste Technische Schlüsselwerte des Porsche 918 Spyder -->
+    <div class="gt-tech-specs">
+      <div class="gt-panel-title">Technische Daten</div>
+      
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Motor</span>
+        <span class="gt-tech-val">4.6L V8 + 2x E-Motor</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Systemleistung</span>
+        <span class="gt-tech-val highlight">887 PS / 652 kW</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Antrieb</span>
+        <span class="gt-tech-val">Allrad (AWD)</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Getriebe</span>
+        <span class="gt-tech-val">7-Gang PDK</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Leergewicht</span>
+        <span class="gt-tech-val">1'674 kg</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">0 – 100 km/h</span>
+        <span class="gt-tech-val highlight">2.6 s</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Stückzahl</span>
+        <span class="gt-tech-val">918</span>
+      </div>
+      <div class="gt-tech-row">
+        <span class="gt-tech-key">Neupreis</span>
+        <span class="gt-tech-val">0.85 Mio. €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTENT GRID
+       ============================================================ -->
+  <section class="car-content">
+    <!-- Inhaltsblock 1: Design & Philosophie — Frontansicht-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Intelligente Performance</h3>
+        <p>Der 918 Spyder ist das Gegenteil von Showeffekt — er ist pure Ingenieurskunst. Das Design ist funktional, zurückhaltend, fast nüchtern im Vergleich zu Ferrari und McLaren. Und genau darin liegt seine Stärke: Porsche wollte kein Poster-Auto bauen, sondern das schnellste, effizienteste und technisch fortschrittlichste Hypercar der Welt.</p>
+        <p>Die Linienführung ist geprägt von Porsches DNA: Die Front erinnert an den Carrera GT, die Lufteinlässe sind präzise platziert, die Proportionen perfekt ausbalanciert. Der 918 wirkt nicht aggressiv — er wirkt entschlossen. Jedes Element dient der Aerodynamik und der Kühlung. Form follows function, keine Kompromisse.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/porsche-front.jpg" alt="Porsche 918 Spyder Frontansicht">
+      </div>
+    </div>
+    
+    <!-- Inhaltsblock 2: Motor & Antrieb (V8 + 2x E-Motor, 887 PS) — Heckansicht-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Drei Motoren, ein Ziel</h3>
+        <p>Der 918 Spyder nutzt ein 4,6-Liter-V8-Saugmotor aus dem RS Spyder Rennwagen, der 608 PS leistet. Dazu kommen zwei Elektromotoren: Einer an der Vorderachse mit 129 PS, einer an der Hinterachse mit 156 PS. Zusammen ergibt das 887 PS — und ein Systemdrehmoment von gewaltigen 1'280 Nm.</p>
+        <p>Anders als Ferrari und McLaren hat der 918 Allradantrieb: Die E-Motoren treiben die Vorderachse an, der Verbrenner die Hinterachse. Das Ergebnis: perfekte Traktion aus jeder Kurve, kein Durchdrehen der Räder. Porsche nennt es «intelligenten Allradantrieb» — das System verteilt die Kraft in Echtzeit dorthin, wo sie gebraucht wird. Dazu kommt: Der 918 kann bis zu 30 km rein elektrisch fahren — als einziger der Holy Trinity ein echter Plug-in-Hybrid.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/porsche-back.jpg" alt="Porsche 918 Spyder Heckansicht">
+      </div>
+    </div>
+    
+    <!-- Inhaltsblock 3: Aerodynamik & Cockpit — Innenraum-Foto -->
+    <div class="car-content-row">
+      <div class="content-text">
+        <h3>Adaptives Fahrwerk & Alltagstauglichkeit</h3>
+        <p>Der 918 nutzt ein adaptives Fahrwerk mit Magnetdämpfern, das sich in Millisekunden an die Fahrsituation anpasst. Der aktive Heckflügel erzeugt bis zu 140 kg Abtrieb bei hohen Geschwindigkeiten — weniger als McLaren, aber effizienter. Porsche setzte auf Balance, nicht auf Maximalwerte.</p>
+        <p>Im Cockpit zeigt sich Porsches Alltagstauglichkeit: Klimaanlage Serie, bequeme Sitze (für Hypercar-Verhältnisse), moderne Infotainment-Systeme. Der 918 kann problemlos im Stadtverkehr bewegt werden — im E-Modus flüsterleise und entspannt. Auf der Rennstrecke wird er zum Raubtier. Porsche baute das vielseitigste Auto der Holy Trinity — und vielleicht genau deshalb das beste.</p>
+      </div>
+      <div class="content-img">
+        <img src="bilder/autos/porsche-interior.jpg" alt="Porsche 918 Spyder Interieur">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOUND-PLAYER
+       ============================================================ -->
+  <section class="sound-section">
+    <div class="sound-info">
+      <div class="sound-eyebrow">Interaktives Element</div>
+      <h3 class="sound-title">Der V8-Sound</h3>
+      <p class="sound-desc">Erlebe den hochdrehenden 4,6-Liter-V8 — ein Sound, der an Porsches Rennsport-DNA erinnert.</p>
+    </div>
+    
+    <!-- Visualizer -->
+    <div class="sound-visualizer">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <!-- Play-Button -->
+    <button class="sound-btn">
+      <span class="sound-btn-icon">▶</span> Motorsound abspielen
+    </button>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Seitenabschluss mit Copyright und Links zu Impressum/Datenschutz.
+       ============================================================ -->
+  <footer class="main-footer">
+    <span>&copy; 2026 The Holy Trinity</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript am Ende des Body einbinden: Sorgt dafür, dass das HTML
+       zuerst geladen wird, bevor das Skript ausgeführt wird (bessere Performance) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

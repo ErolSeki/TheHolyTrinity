@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta-Tags: Beschreibung, Suchbegriffe und Autor für Suchmaschinen (SEO) -->
+  <meta name="description" content="Direkter Vergleich der Holy Trinity: Ferrari LaFerrari, McLaren P1 und Porsche 918 Spyder. Alle technischen Daten im Überblick.">
+  <meta name="keywords" content="Hypercar Vergleich, LaFerrari vs P1 vs 918, Holy Trinity Specs">
+  <meta name="author" content="Erol Seki">
+  
+  <title>Vergleich — The Holy Trinity</title>
+  
+  <!-- Favicon: Kleines Icon, das im Browser-Tab und in Lesezeichen angezeigt wird -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Externes Stylesheet einbinden: Alle Styles sind in css/style.css ausgelagert -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       Sticky Navigation, die beim Scrollen immer oben bleibt.
+       Enthält: Logo (links), Hamburger-Button (Mobile rechts), Links (Desktop).
+       Das Mobile-Menü wird per JavaScript gesteuert (script.js, Funktion 1).
+       ============================================================ -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo">The <span>Holy</span> Trinity</a>
+    
+    <button class="nav-toggle" aria-label="Navigation öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ferrari.html">Ferrari</a></li>
+      <li><a href="mclaren.html">McLaren</a></li>
+      <li><a href="porsche.html">Porsche</a></li>
+      <li><a href="vergleich.html" class="active">Vergleich</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HEADER
+       ============================================================ -->
+  <header class="page-header">
+    <div class="page-eyebrow">Head to Head</div>
+    <h1>Der grosse Vergleich</h1>
+  </header>
+
+  <!-- ============================================================
+       VERGLEICHSTABELLE
+       ============================================================ -->
+  <section class="vergleich-section">
+    <div class="section-eyebrow">Alle Daten im Überblick</div>
+    <h2 class="section-title">Ferrari vs McLaren vs Porsche</h2>
+    
+    <!-- Scroll-Container für Mobile -->
+    <div class="table-wrapper">
+      <table class="vergleich-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="ferrari-th">Ferrari LaFerrari</th>
+            <th class="mclaren-th">McLaren P1</th>
+            <th class="porsche-th">Porsche 918 Spyder</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Zeile: Motor-Typ und Hubraum -->
+          <tr>
+            <td>Motor</td>
+            <td>6.3L V12 + E-Motor</td>
+            <td>3.8L V8 Twin-Turbo + E-Motor</td>
+            <td>4.6L V8 + 2x E-Motor</td>
+          </tr>
+          
+          <!-- Zeile: Gesamtleistung (Verbrenner + E-Motor kombiniert) -->
+          <tr>
+            <td>Systemleistung</td>
+            <td class="best">963 PS / 708 kW</td>
+            <td>916 PS / 674 kW</td>
+            <td>887 PS / 652 kW</td>
+          </tr>
+          
+          <!-- Zeile: Maximales Drehmoment in Newtonmeter -->
+          <tr>
+            <td>Systemdrehmoment</td>
+            <td>900 Nm</td>
+            <td>978 Nm</td>
+            <td class="best">1'280 Nm</td>
+          </tr>
+          
+          <!-- Zeile: Sprint-Zeit von 0 auf 100 km/h -->
+          <tr>
+            <td>0 – 100 km/h</td>
+            <td>2.9 s</td>
+            <td>2.8 s</td>
+            <td class="best">2.6 s</td>
+          </tr>
+          
+          <!-- Zeile: Sprint-Zeit von 0 auf 200 km/h -->
+          <tr>
+            <td>0 – 200 km/h</td>
+            <td>6.9 s</td>
+            <td class="best">6.8 s</td>
+            <td>7.2 s</td>
+          </tr>
+          
+          <!-- Zeile: Sprint-Zeit von 0 auf 300 km/h -->
+          <tr>
+            <td>0 – 300 km/h</td>
+            <td>15.0 s</td>
+            <td class="best">16.5 s</td>
+            <td>19.9 s</td>
+          </tr>
+          
+          <!-- Zeile: Maximale Höchstgeschwindigkeit in km/h -->
+          <tr>
+            <td>Höchstgeschwindigkeit</td>
+            <td class="best">352 km/h</td>
+            <td>350 km/h</td>
+            <td>345 km/h</td>
+          </tr>
+          
+          <!-- Zeile: Leergewicht des Fahrzeugs in Kilogramm -->
+          <tr>
+            <td>Leergewicht</td>
+            <td class="best">1'255 kg</td>
+            <td>1'395 kg</td>
+            <td>1'674 kg</td>
+          </tr>
+          
+          <!-- Zeile: Leistung pro Kilogramm (PS/kg) — wichtige Kennzahl -->
+          <tr>
+            <td>Leistungsgewicht</td>
+            <td class="best">1.30 kg/PS</td>
+            <td>1.52 kg/PS</td>
+            <td>1.89 kg/PS</td>
+          </tr>
+          
+          <!-- Zeile: Antriebs-Konfiguration (Hinterrad/Allrad) -->
+          <tr>
+            <td>Antrieb</td>
+            <td>Hinterrad (RWD)</td>
+            <td>Hinterrad (RWD)</td>
+            <td class="best">Allrad (AWD)</td>
+          </tr>
+          
+          <!-- Zeile: Getriebe-Typ und Anzahl Gänge -->
+          <tr>
+            <td>Getriebe</td>
+            <td>7-Gang DCT</td>
+            <td>7-Gang DCT</td>
+            <td>7-Gang PDK</td>
+          </tr>
+          
+          <!-- Zeile: Elektrische Reichweite im reinen E-Modus (km) -->
+          <tr>
+            <td>Rein elektrische Reichweite</td>
+            <td>—</td>
+            <td>10 km</td>
+            <td class="best">30 km</td>
+          </tr>
+          
+          <!-- Zeile: Kombinierter Kraftstoffverbrauch (l/100 km) -->
+          <tr>
+            <td>Verbrauch (kombiniert)</td>
+            <td>—</td>
+            <td>8.3 l/100km</td>
+            <td class="best">3.1 l/100km</td>
+          </tr>
+          
+          <!-- Zeile: Rundenzeit auf der Nürburgring-Nordschleife (20,8 km) -->
+          <tr>
+            <td>Nürburgring-Nordschleife</td>
+            <td>—</td>
+            <td>6:47 min</td>
+            <td class="best">6:57 min</td>
+          </tr>
+          
+          <!-- Zeile: Produzierte Stückzahl (limitierte Auflage) -->
+          <tr>
+            <td>Stückzahl</td>
+            <td>499</td>
+            <td>375</td>
+            <td class="best">918</td>
+          </tr>
+          
+          <!-- Zeile: Ursprünglicher Kaufpreis bei Markteinführung -->
+          <tr>
+            <td>Neupreis</td>
+            <td>1.4 Mio. €</td>
+            <td>1.15 Mio. €</td>
+            <td class="best">0.85 Mio. €</td>
+          </tr>
+          
+          <!-- Zeile: Produktionszeitraum (Von-Bis Jahreszahl) -->
+          <tr>
+            <td>Produktionszeitraum</td>
+            <td>2013 — 2016</td>
+            <td>2013 — 2015</td>
+            <td>2013 — 2015</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Anmerkungsbereich: Erläuterung zur Datenbasis der Tabelle -->
+    <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-dim); font-style: italic;">
+      Hinweis: Die Werte mit <span style="color: var(--gold); font-weight: 700;">goldenem Highlight</span> markieren den jeweiligen Bestwert in der Kategorie. Manche Werte können je nach Quelle leicht variieren.
+    </p>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Seitenabschluss mit Copyright und Links zu Impressum/Datenschutz.
+       ============================================================ -->
+  <footer class="main-footer">
+    <span>&copy; 2026 The Holy Trinity</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript am Ende des Body einbinden: Sorgt dafür, dass das HTML
+       zuerst geladen wird, bevor das Skript ausgeführt wird (bessere Performance) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1102 @@
+/* ============================================================
+   THE HOLY TRINITY — css/style.css
+   Modul 293 MP | Hypercar-Vergleich Website
+   
+   Dieses Stylesheet enthält alle Styles für die Website.
+   Strukturiert nach Komponenten und Seiten.
+   Verwendet CSS-Variablen für zentrale Farbverwaltung.
+   Responsive Design mit Media Queries bei 900px und 600px.
+   ============================================================ */
+
+/* ---- Google Fonts einbinden ---- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400&display=swap');
+
+/* ---- Browser-Reset für konsistentes Verhalten ---- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ---- CSS Variablen (zentrale Farbverwaltung) ---- */
+:root {
+  /* Hintergrundfarben */
+  --bg:          #464646;  /* Haupthintergrund (matching Studio-Autofotos) */
+  --bg-card:     #4e4e4e;  /* Karten-Hintergrund */
+  --bg-nav:      #383838;  /* Navigation Hintergrund */
+  --bg-dark:     #2e2e2e;  /* Dunkler Hintergrund (Hero, GT-Header) */
+  --bg-panel:    #404040;  /* Panel-Hintergrund (Specs) */
+
+  /* Textfarben */
+  --text:        #f0ede8;  /* Haupttext (hell) */
+  --text-mid:    #c0bbb4;  /* Mittlerer Text */
+  --text-dim:    #808080;  /* Gedimmter Text (Labels, Meta) */
+
+  /* Akzentfarbe */
+  --gold:        #c9a84c;  /* Gold für Highlights und Best-Values */
+
+  /* Markenfarben */
+  --ferrari:     #c8102e;  /* Ferrari Rosso Corsa */
+  --mclaren:     #ff7c00;  /* McLaren Orange */
+  --porsche:     #b0b8c0;  /* Porsche Silber */
+
+  /* Rahmen und Linien */
+  --border:      rgba(255,255,255,0.09);   /* Feine Linien */
+  --border-med:  rgba(255,255,255,0.16);   /* Mittlere Linien */
+}
+
+/* ---- Body Basis-Styles ---- */
+body {
+  font-family: 'Barlow', sans-serif;        /* Hauptschrift für Fliesstext */
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   NAVIGATION (auf allen Seiten)
+   
+   Sticky Navigation, die beim Scrollen oben bleibt.
+   Enthält Logo, Desktop-Links und Mobile-Hamburger-Menü.
+   Mobile-Version wird mit JavaScript gesteuert (siehe script.js).
+   ============================================================ */
+nav.main-nav {
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--border);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  position: sticky;                    /* Bleibt beim Scrollen oben fixiert */
+  top: 0;
+  z-index: 100;                        /* Liegt über allen anderen Elementen */
+}
+
+/* Logo (links in der Navigation) */
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  flex-shrink: 0;                      /* Verhindert Schrumpfen bei wenig Platz */
+}
+.nav-logo span { color: var(--gold); }  /* "Holy" in Gold */
+
+/* Desktop Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.15rem;
+}
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0.4rem 0.9rem;
+  transition: color 0.2s;
+  display: block;
+}
+.nav-links a:hover  { color: var(--text-mid); }
+.nav-links a.active { 
+  color: var(--gold); 
+  border-bottom: 1.5px solid var(--gold);  /* Aktive Seite mit goldenem Unterstrich */
+}
+
+/* Hamburger-Menü (nur auf Mobile sichtbar) */
+.nav-toggle {
+  display: none;                       /* Desktop: versteckt */
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  transition: 0.3s;                    /* Smooth Animation beim Öffnen/Schliessen */
+}
+
+/* ============================================================
+   INDEX — HERO BEREICH (Startseite oben)
+   
+   Grosser Hero-Bereich mit Hintergrundbild und "TRINITY" Ghost-Text.
+   Enthält Titel, Untertitel und Holy-Trinity-Gruppenfoto.
+   ============================================================ */
+.hero {
+  background: var(--bg-dark);
+  padding: 6rem 2.5rem 5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ghost-Text "TRINITY" im Hintergrund */
+.hero::before {
+  content: 'TRINITY';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18vw;                     /* Responsive Grösse (18% der Viewport-Breite) */
+  font-weight: 300;
+  color: rgba(255,255,255,0.025);      /* Sehr transparent (Ghost-Effekt) */
+  letter-spacing: 0.1em;
+  pointer-events: none;                /* Nicht anklickbar */
+  white-space: nowrap;                 /* Kein Zeilenumbruch */
+}
+
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);  /* Responsive: min 3rem, max 5.5rem */
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+
+.hero-sub {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 7;                /* Festes Seitenverhältnis */
+  object-fit: cover;
+  display: block;
+  position: relative;
+  border: 1px solid var(--border);
+}
+
+/* ============================================================
+   INDEX — AUTO-NAVIGATION
+   ============================================================ */
+.car-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--border);
+}
+
+.car-nav-item {
+  position: relative;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+  color: var(--text);
+}
+.car-nav-item:last-child { border-right: none; }
+.car-nav-item:hover { background: rgba(255,255,255,0.03); }
+
+.car-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+}
+.car-nav-item.ferrari::before { background: var(--ferrari); }
+.car-nav-item.mclaren::before { background: var(--mclaren); }
+.car-nav-item.porsche::before { background: var(--porsche); }
+
+.car-nav-left { display: flex; align-items: center; gap: 1rem; }
+
+.car-nav-logo {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.car-nav-logo img {
+  width: 28px; height: 28px;
+  object-fit: contain;
+}
+
+.car-nav-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.car-nav-item.ferrari .car-nav-brand { color: var(--ferrari); }
+.car-nav-item.mclaren .car-nav-brand { color: var(--mclaren); }
+.car-nav-item.porsche .car-nav-brand { color: var(--porsche); }
+
+.car-nav-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+}
+
+.car-nav-arrow {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  transition: transform 0.2s, color 0.2s;
+}
+.car-nav-item:hover .car-nav-arrow {
+  transform: translateX(5px);
+  color: var(--gold);
+}
+
+/* ============================================================
+   INDEX — STORY
+   ============================================================ */
+.story-section {
+  padding: 5rem 2.5rem;
+  background: var(--bg);
+}
+
+.story-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.story-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 3.5rem;
+  max-width: 560px;
+  line-height: 1.2;
+}
+.story-title em { font-style: italic; color: var(--gold); }
+
+.story-chapters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+  margin-bottom: 4rem;
+}
+.story-chapter {
+  background: var(--bg-card);
+  padding: 2rem;
+}
+.chapter-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  opacity: 0.3;
+}
+.chapter-num.ferrari-num { color: var(--ferrari); }
+.chapter-num.mclaren-num { color: var(--mclaren); }
+.chapter-num.porsche-num { color: var(--porsche); }
+.chapter-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.chapter-text {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.story-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.story-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+.story-text h3 em { font-style: italic; color: var(--gold); }
+.story-text p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+.story-text p:last-child { margin-bottom: 0; }
+
+.timeline { display: flex; flex-direction: column; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-year {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  padding-top: 2px;
+}
+.timeline-text {
+  font-size: 0.83rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.timeline-text strong { color: var(--text); font-weight: 600; }
+
+/* ============================================================
+   AUTO-SEITEN — GT7 HEADER (Gran Turismo Style)
+   
+   Kopfbereich auf ferrari.html, mclaren.html, porsche.html.
+   Zeigt Markenlogo, Autoname und Performance Points (PP) Badge.
+   Inspiriert vom Gran Turismo 7 Design.
+   OHNE grosses Auto-Bild (kommt weiter unten im Content Grid).
+   ============================================================ */
+.gt-header {
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem 2.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Hintergrund-Raster (subtiler Grid-Effekt) */
+.gt-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;                            /* Füllt gesamten Header aus */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;                /* Nicht anklickbar */
+}
+
+.gt-header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;                          /* Liegt über dem Hintergrund-Raster */
+  gap: 2rem;
+}
+
+/* Linke Seite: Logo + Autoname */
+.gt-brand-block { display: flex; align-items: center; gap: 1rem; }
+
+.gt-logo {
+  width: 52px; height: 52px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--border-med);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.gt-logo img {
+  width: 38px; height: 38px;
+  object-fit: contain;
+}
+
+.gt-brand-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+/* Markenfarben für Markennamen */
+.gt-brand-name.ferrari { color: var(--ferrari); }
+.gt-brand-name.mclaren { color: var(--mclaren); }
+.gt-brand-name.porsche  { color: var(--porsche); }
+
+.gt-car-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1;
+}
+.gt-car-year {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  margin-top: 0.3rem;
+}
+
+/* Rechte Seite: Performance Points Badge */
+.gt-pp-badge { text-align: right; }
+.gt-pp-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.2rem;
+}
+.gt-pp-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold);                  /* PP-Wert immer in Gold */
+  line-height: 1;
+}
+.gt-pp-sub {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   AUTO-SEITEN — SPECS PANEL (Performance & Technische Daten)
+   
+   Zweispaltiges Panel mit animierten Stat-Balken (links)
+   und technischen Daten-Tabelle (rechts).
+   Stat-Balken werden mit JavaScript animiert (siehe script.js).
+   ============================================================ */
+.gt-specs-panel {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;      /* Zwei gleich breite Spalten */
+}
+
+.gt-panel-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Linke Spalte: Stat-Balken (Performance-Werte) */
+.gt-stat-bars {
+  padding: 2rem 2.5rem;
+  border-right: 1px solid var(--border);
+}
+
+.gt-stat-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;  /* Label | Balken | Wert */
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+}
+.gt-stat-row:last-child { margin-bottom: 0; }
+
+.gt-stat-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+/* Balken-Track (Hintergrund des Balkens) */
+.gt-bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+/* Balken-Füllung (wird mit JavaScript animiert) */
+.gt-bar-fill {
+  height: 100%;
+  width: 0;                            /* Startet bei 0 */
+  transition: width 1s ease 0.4s;      /* Animiert zu data-width Wert */
+}
+/* Markenfarben für Balken */
+.gt-bar-fill.ferrari { background: var(--ferrari); }
+.gt-bar-fill.mclaren { background: var(--mclaren); }
+.gt-bar-fill.porsche  { background: var(--porsche); }
+.gt-bar-fill.gold    { background: var(--gold); }
+.gt-bar-fill.silver  { background: #a0a8b0; }
+
+.gt-stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+/* Rechte Spalte: Technische Daten (Key-Value Paare) */
+.gt-tech-specs {
+  padding: 2rem 2.5rem;
+}
+
+.gt-tech-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.gt-tech-row:last-child { border-bottom: none; }
+
+.gt-tech-key {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.gt-tech-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+.gt-tech-val.highlight { color: var(--gold); }  /* Bestwerte in Gold */
+
+/* ============================================================
+   AUTO-SEITEN — CONTENT GRID
+   ============================================================ */
+.car-content { background: var(--bg); }
+
+.car-content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  background: var(--border);
+  border-bottom: 1.5px solid var(--border);
+}
+.car-content-row:last-child { border-bottom: none; }
+
+.content-text {
+  background: var(--bg-card);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content-text h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.content-text p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 0.9rem;
+}
+.content-text p:last-child { margin-bottom: 0; }
+
+.content-img {
+  background: var(--bg-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 300px;
+}
+.content-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   AUTO-SEITEN — SOUND PLAYER (Interaktives Element)
+   
+   Ganz unten auf den Auto-Seiten.
+   Spielt Motorsounds ab (MP3-Dateien aus audios/ Ordner).
+   Enthält: Info-Text, Visualizer-Animation, Play/Pause Button.
+   Wird mit JavaScript gesteuert (siehe script.js).
+   ============================================================ */
+.sound-section {
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;                     /* Umbrechen bei wenig Platz */
+}
+
+/* Sound Info (linke Seite) */
+.sound-info { flex: 1; min-width: 200px; }
+
+.sound-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+.sound-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.sound-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* Visualizer (animierte Balken) */
+.sound-visualizer {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 28px;
+}
+.sound-visualizer span {
+  display: block;
+  width: 3px;
+  height: 4px;                         /* Startet klein */
+  background: var(--gold);
+  opacity: 0.3;                        /* Inaktiv gedimmt */
+  border-radius: 1px;
+  transition: height 0.1s;
+}
+/* Aktiver Zustand (wenn Sound spielt) */
+.sound-visualizer.active span {
+  opacity: 1;                          /* Volle Sichtbarkeit */
+  animation: soundbar 0.8s ease-in-out infinite;  /* Hüpfende Animation */
+}
+/* Verzögerte Animation für wellenartigen Effekt */
+.sound-visualizer span:nth-child(1) { animation-delay: 0.0s; }
+.sound-visualizer span:nth-child(2) { animation-delay: 0.1s; }
+.sound-visualizer span:nth-child(3) { animation-delay: 0.2s; }
+.sound-visualizer span:nth-child(4) { animation-delay: 0.15s; }
+.sound-visualizer span:nth-child(5) { animation-delay: 0.05s; }
+
+/* Animation: Balken hüpft auf und ab */
+@keyframes soundbar {
+  0%, 100% { height: 4px; }            /* Klein am Anfang und Ende */
+  50%       { height: 22px; }          /* Gross in der Mitte */
+}
+
+/* Play/Pause Button */
+.sound-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--border-med);
+  background: transparent;
+  color: var(--text);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.sound-btn:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+/* Aktiver Zustand (Sound spielt gerade) */
+.sound-btn.playing {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);   /* Leichter Gold-Hintergrund */
+}
+.sound-btn-icon { font-size: 1rem; }
+
+/* ============================================================
+   VERGLEICH
+   ============================================================ */
+.vergleich-section {
+  background: var(--bg-card);
+  padding: 4rem 2.5rem;
+}
+
+.section-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.table-wrapper { overflow-x: auto; }
+
+.vergleich-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 600px;
+}
+.vergleich-table th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-med);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--bg-dark);
+}
+.vergleich-table th.ferrari-th { color: var(--ferrari); }
+.vergleich-table th.mclaren-th { color: var(--mclaren); }
+.vergleich-table th.porsche-th  { color: var(--porsche); }
+.vergleich-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-mid);
+}
+.vergleich-table td:first-child {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.vergleich-table tr:hover td { background: rgba(255,255,255,0.02); }
+.vergleich-table td.best { font-weight: 700; color: var(--gold); }
+
+/* ============================================================
+   KONTAKT — FORMULAR (mit JavaScript-Validierung)
+   
+   Zweispaltiges Layout: Info links, Formular rechts.
+   Formular-Felder werden mit JavaScript validiert (siehe script.js).
+   Fehler werden mit .has-error Klasse angezeigt.
+   ============================================================ */
+.kontakt-section {
+  background: var(--bg);
+  padding: 5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;    /* Info schmaler, Formular breiter */
+  gap: 5rem;
+  align-items: start;
+}
+.kontakt-info h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.kontakt-info p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* Formular-Gruppe (ein Eingabefeld mit Label und Fehlertext) */
+.form-group { margin-bottom: 1.2rem; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;      /* Zwei Felder nebeneinander */
+  gap: 1rem;
+}
+.form-group label {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+}
+.form-group label .req { color: var(--gold); }  /* Pflichtfeld-Stern */
+
+/* Eingabefelder (Text, E-Mail, Select, Textarea) */
+.form-control {
+  width: 100%;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-med);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.7rem 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-control:focus { border-color: var(--gold); }  /* Gold beim Fokus */
+textarea.form-control { resize: vertical; min-height: 100px; }
+
+/* Fehler-Zustand (wird mit JavaScript hinzugefügt) */
+.form-group.has-error .form-control { border-color: var(--ferrari); }  /* Roter Rahmen */
+.error-msg {
+  display: none;                       /* Standard: versteckt */
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--ferrari);
+  margin-top: 0.3rem;
+}
+.form-group.has-error .error-msg { display: block; }  /* Bei Fehler: sichtbar */
+
+/* Datenschutz-Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  padding: 1rem;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 16px; height: 16px;
+  accent-color: var(--gold);           /* Checkbox in Gold */
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.checkbox-group label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.checkbox-group label a { color: var(--gold); }
+
+/* Submit-Button */
+.btn-submit {
+  background: var(--gold);
+  color: #111;
+  border: none;
+  padding: 0.85rem 2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+.btn-submit:hover { opacity: 0.85; }
+.btn-submit:active { transform: scale(0.98); }  /* Leichter Druck-Effekt */
+
+/* Erfolgsmeldung (wird mit JavaScript angezeigt) */
+.success-msg {
+  display: none;                       /* Standard: versteckt */
+  padding: 1.5rem;
+  border: 1px solid var(--gold);
+  background: rgba(201,168,76,0.08);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ============================================================
+   PAGE HEADER (Vergleich, Kontakt, Legal)
+   ============================================================ */
+.page-header {
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2.5rem 3rem;
+}
+.page-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.page-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--text);
+}
+
+/* ============================================================
+   LEGAL
+   ============================================================ */
+.legal-section {
+  padding: 4rem 2.5rem;
+  background: var(--bg);
+  max-width: 800px;
+}
+.legal-section h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.legal-section h2:first-child {
+  margin-top: 0; padding-top: 0; border-top: none;
+}
+.legal-section p, .legal-section li {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 0.75rem;
+}
+.legal-section ul { padding-left: 1.5rem; }
+.legal-section a { color: var(--gold); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.main-footer {
+  background: var(--bg-nav);
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 1.75rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+footer.main-footer a { color: var(--text-dim); transition: color 0.2s; }
+footer.main-footer a:hover { color: var(--gold); }
+.footer-links { display: flex; gap: 2rem; }
+
+/* ============================================================
+   RESPONSIVE DESIGN (Anpassung für Mobile Geräte)
+   
+   Zwei Breakpoints:
+   - 900px: Tablet (3-Spalten werden zu 1-Spalte)
+   - 600px: Mobile (kleinere Abstände, gestapeltes Layout)
+   
+   Mobile Navigation wird mit JavaScript gesteuert (siehe script.js).
+   ============================================================ */
+
+/* ---- BREAKPOINT 900px (Tablet) ---- */
+@media (max-width: 900px) {
+  /* Mobile Navigation einblenden */
+  .nav-toggle { display: flex; }       /* Hamburger-Button sichtbar */
+  .nav-links {
+    position: absolute;
+    top: 62px; left: 0; right: 0;
+    background: var(--bg-nav);
+    flex-direction: column;            /* Vertikal statt horizontal */
+    padding: 1rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+    transform: translateY(-110%);      /* Standard: nach oben geschoben */
+    opacity: 0;
+    pointer-events: none;              /* Nicht anklickbar wenn versteckt */
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-links.open {                    /* Mit JavaScript hinzugefügt */
+    transform: translateY(0);          /* Runterfahren */
+    opacity: 1;
+    pointer-events: all;               /* Wieder anklickbar */
+  }
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links a { padding: 0.85rem 0; font-size: 0.85rem; }
+
+  /* Layouts zu 1-Spalte ändern */
+  .story-chapters { grid-template-columns: 1fr; }  /* Story-Kapitel untereinander */
+  .story-main { grid-template-columns: 1fr; gap: 2rem; }
+  .car-nav { grid-template-columns: 1fr; }         /* Auto-Navigation untereinander */
+  .car-nav-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .gt-header-content { flex-direction: column; }   /* GT-Header vertikal */
+  .gt-pp-badge { text-align: left; }
+  .gt-specs-panel { grid-template-columns: 1fr; }  /* Specs-Panel vertikal */
+  .gt-stat-bars { border-right: none; border-bottom: 1px solid var(--border); }
+  .car-content-row { grid-template-columns: 1fr; } /* Content-Grid vertikal */
+  .content-img { min-height: 220px; }
+  .kontakt-section { grid-template-columns: 1fr; gap: 2rem; }  /* Kontakt vertikal */
+  .form-row { grid-template-columns: 1fr; }        /* Formular-Felder untereinander */
+  .gt-stat-row { grid-template-columns: 80px 1fr 50px; }  /* Kleinere Stat-Labels */
+}
+
+/* ---- BREAKPOINT 600px (Mobile) ---- */
+@media (max-width: 600px) {
+  /* Kleinere Abstände für Mobile */
+  nav.main-nav { padding: 0 1.5rem; }
+  .hero { padding: 4rem 1.5rem 3rem; }
+  .story-section, .vergleich-section, .kontakt-section { padding: 3rem 1.5rem; }
+  .gt-header { padding: 2rem 1.5rem 1.5rem; }
+  .gt-stat-bars, .gt-tech-specs { padding: 1.5rem; }
+  .content-text { padding: 2rem 1.5rem; }
+  footer.main-footer { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-links { gap: 1.5rem; }
+  .sound-section { padding: 2rem 1.5rem; gap: 1.5rem; }
+}
